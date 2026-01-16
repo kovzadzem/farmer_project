@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="home-text">
+    {% if current_user.is_authenticated %}
+        <h2>Welcome to Vilego </h2>
+        <p>
+           Vilego is a platform for farmers and supporters of local products.
+           Please log in or register to access all features.
+        </p>
+        <p>
+            You are logged in as:
+            <strong>{{ current_user.username }}</strong>
+        </p>
+    {% else %}
+        <h2>Welcome to Vilego </h2>
+        <p>
+           Vilego is a platform for farmers and supporters of local products.
+        </p>
+        <p>
+           Please log in or register to access all features.
+        </p>
+    {% endif %}
+</div>
+{% endblock %}
