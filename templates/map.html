@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/map.css') }}"
+>
+
+<div class="map-page">
+
+    <!-- LEFT LIST -->
+    <div class="farm-list">
+
+        <div class="farm-card">
+            <div class="farm-header">
+                <div class="farm-name">ფერმა „რაისი“</div>
+                <span class="badge super">SUPER VIP</span>
+            </div>
+            <div class="farm-address">
+                სოფელი გომბორი, კახეთი
+            </div>
+        </div>
+
+        <div class="farm-card">
+            <div class="farm-header">
+                <div class="farm-name">ფერმა „ხინოწმინდა“</div>
+                <span class="badge vipplus">VIP+</span>
+            </div>
+            <div class="farm-address">
+                სოფელი გომბორი, კახეთი
+            </div>
+        </div>
+
+        <div class="farm-card">
+            <div class="farm-header">
+                <div class="farm-name">ფერმა „გლამური“</div>
+                <span class="badge vip">VIP</span>
+            </div>
+            <div class="farm-address">
+                სოფელი გომბორი, კახეთი
+            </div>
+        </div>
+
+    </div>
+
+    <!-- MAP -->
+    <div id="map"></div>
+
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+    const map = L.map('map').setView([41.7151, 44.8271], 11);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap'
+    }).addTo(map);
+
+    const farms = [
+        { name: "ფერმა „რაისი“", lat: 41.72, lng: 44.80 },
+        { name: "ფერმა „ხინოწმინდა“", lat: 41.74, lng: 44.85 },
+        { name: "ფერმა „გლამური“", lat: 41.70, lng: 44.83 }
+    ];
+
+    farms.forEach(farm => {
+        L.marker([farm.lat, farm.lng])
+            .addTo(map)
+            .bindPopup(farm.name);
+    });
+</script>
+
+{% endblock %}

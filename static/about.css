@@ -1,0 +1,105 @@
+/* =========================
+   ABOUT PAGE – FINAL CSS
+   ========================= */
+
+.about-section {
+    padding: 60px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* LAYOUT */
+.about-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+/* TEXT */
+.about-text {
+    flex: 1;
+}
+
+.about-text h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #0a7a5a;
+    font-weight: 700;
+}
+
+.about-text p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 14px;
+    color: #333;
+}
+
+/* =========================
+   IMAGES – FORCE SMALL SIZE
+   ========================= */
+
+.about-images {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-end;
+    flex-shrink: 0;
+}
+
+.about-images img {
+    width: 50px !important;
+    max-width: 50px !important;
+    min-width: 50px !important;
+    height: 65px !important;
+    max-height: 65px !important;
+    min-height: 65px !important;
+
+    object-fit: cover !important;
+    display: block !important;
+
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================
+   FORCE TEAM HORIZONTAL
+   ========================= */
+
+.team-horizontal {
+    display: flex !important;
+    align-items: center !important;
+    gap: 20px;
+}
+
+.team-photo {
+    flex-shrink: 0;
+}
+
+.team-photo img {
+    width: 90px !important;
+    height: 90px !important;
+    max-width: 90px !important;
+    max-height: 90px !important;
+
+    object-fit: cover;
+    border-radius: 16px;
+    display: block !important;
+}
+
+.team-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.team-info h3 {
+    margin: 0 0 6px 0;
+    font-size: 20px;
+    color: #0a7a5a;
+}
+
+.team-info p {
+    margin: 0;
+    font-size: 15px;
+    color: #444;
+}

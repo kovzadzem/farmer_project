@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/cart.css') }}">
+
+<div class="cart-page">
+
+    <!-- LEFT SIDE -->
+    <div class="cart-left">
+
+        <h2 class="cart-title">My Cart</h2>
+
+        <!-- CART ITEM -->
+        {% for item in cart_items %}
+        <div class="cart-item">
+
+
+            <div class="item-info">
+                <h4>{{ item.name }}</h4>
+                <span class="farm-name"> Farm"{{ item.farm }}"</span>
+            </div>
+
+    
+            <button class="remove-btn">🗑</button>
+
+        </div>
+        {% endfor %}
+
+        <div class="cart-actions">
+            <a href="{{ url_for('home') }}" class="btn-outline">back</a>
+            <a href="{{ url_for('map_page') }}" class="btn-outline">continue</a>
+        </div>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="cart-summary">
+
+        <h3>Total</h3>
+
+        <div class="summary-row">
+            <span>Subtotal</span>
+            <span>{{ subtotal }} ₾</span>
+        </div>
+
+        <div class="summary-row">
+            <span>Delivery</span>
+            <span>{{ delivery }} ₾</span>
+        </div>
+
+        <hr>
+
+        <div class="summary-row total">
+            <span>Total</span>
+            <span>{{ total }} ₾</span>
+        </div>
+
+        <button class="checkout-btn">
+           Proceed to checkout
+        </button>
+
+    </div>
+
+</div>
+{% endblock %}

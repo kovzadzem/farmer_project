@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/favorites.css') }}">
+
+<div class="favorites-page">
+
+    <h1 class="page-title">რჩეულები</h1>
+
+    <div class="products-grid">
+
+
+
+        <!-- PRODUCT 2 -->
+        <div class="product-card">
+            <div class="image-wrapper">
+                <img src="{{ url_for('static', filename='img/raspberry.jpg') }}" alt="ჟოლო">
+                <button class="fav-btn active">❤</button>
+            </div>
+
+            <div class="product-body">
+                <h3>ჟოლო</h3>
+                <p class="farm-name">ფერმა „ნინოწმინდა“</p>
+
+                <div class="product-footer">
+                    <span class="price">20 ₾</span>
+                    <button class="add-btn">კალათაში</button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- EMPTY STATE (თუ რჩეულები არ არის) -->
+    <!--
+    <div class="empty-state">
+        <p>ჯერ არ გაქვს დამატებული რჩეულები ❤️</p>
+        <a href="{{ url_for('home') }}" class="go-shop">პროდუქტების ნახვა</a>
+    </div>
+    -->
+
+</div>
+
+{% endblock %}
