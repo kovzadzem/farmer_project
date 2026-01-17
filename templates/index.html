@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- კატეგორიები -->
+<section class="section">
+    <h2>კატეგორიები</h2>
+
+    <div class="categories">
+        <div class="category-card">🍯 თაფლი</div>
+        <div class="category-card">🥛 რძის პროდუქტები</div>
+        <div class="category-card">🧀 ყველი</div>
+        <div class="category-card">🥩 ხორცი</div>
+        <div class="category-card">🥬 ბოსტნეული</div>
+        <div class="category-card">🍎 ხილი</div>
+        <div class="category-card">🌿 მწვანილი</div>
+        <div class="category-card">🐝 ფუტკარი</div>
+    </div>
+
+    <button class="btn-primary">ყველას ნახვა</button>
+</section>
+
+<!-- პოპულარული პროდუქტები -->
+<section class="section">
+    <h2>პოპულარული პროდუქტები</h2>
+
+    <div class="products">
+        {% for i in range(6) %}
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x150" alt="">
+            <h4>თაფლი</h4>
+            <p>20 ₾</p>
+            <div class="product-actions">
+                <button>♡</button>
+                <button>🛒</button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- ფერმერები -->
+<section class="section">
+    <h2>საუკეთესო ფერმერები</h2>
+
+    <div class="farmers">
+        <div class="farmer-card">
+            <img src="https://via.placeholder.com/300x200">
+            <p>გიორგი</p>
+        </div>
+        <div class="farmer-card">
+            <img src="https://via.placeholder.com/300x200">
+            <p>ფერმა "ნატურალი"</p>
+        </div>
+        <div class="farmer-card">
+            <img src="https://via.placeholder.com/300x200">
+            <p>ლაშა ვარდანიძე</p>
+        </div>
+    </div>
+</section>
+
+<!-- ქვედა ბანერი -->
+<section class="banner">
+    <h3>დაზოგე დრო, თანხა და ენდეთ VilleGo-ს!</h3>
+    <button class="btn-primary">შეკვეთა</button>
+</section>
+
+{% endblock %}

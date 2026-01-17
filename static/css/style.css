@@ -108,3 +108,128 @@ input[type="submit"]:hover {
     text-align: center;
     font-size: 18px;
 }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background: #f8f8f8;
+}
+
+/* HEADER */
+.header {
+    background: #fff;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0a7a4a;
+}
+
+.nav a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+/* LAYOUT */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+.section {
+    margin-bottom: 50px;
+}
+
+.section h2 {
+    margin-bottom: 20px;
+}
+
+/* CATEGORIES */
+.categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.category-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* PRODUCTS */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.product-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/* FARMERS */
+.farmers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.farmer-card img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.farmer-card p {
+    text-align: center;
+    margin-top: 8px;
+}
+
+/* BANNER */
+.banner {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* BUTTON */
+.btn-primary {
+    background: #0a7a4a;
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+

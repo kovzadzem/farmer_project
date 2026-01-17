@@ -1,25 +1,145 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block content %}
-<div class="home-text">
-    {% if current_user.is_authenticated %}
-        <h2>Welcome to Vilego </h2>
-        <p>
-           Vilego is a platform for farmers and supporters of local products.
-           Please log in or register to access all features.
-        </p>
-        <p>
-            You are logged in as:
-            <strong>{{ current_user.username }}</strong>
-        </p>
-    {% else %}
-        <h2>Welcome to Vilego </h2>
-        <p>
-           Vilego is a platform for farmers and supporters of local products.
-        </p>
-        <p>
-           Please log in or register to access all features.
-        </p>
-    {% endif %}
+
+<!-- კატეგორიები -->
+<section class="section">
+    <h2>კატეგორიები</h2>
+    <div class="categories">
+        <div class="category-card">ხილ-ბოსტნეული</div>
+        <div class="category-card"> რძის პროდუქტები</div>
+        <div class="category-card"> ყველი</div>
+        <div class="category-card"> ხორცი</div>
+        <div class="category-card"> თაფლი</div>
+    </div>
+</section>
+
+<!-- პოპულარული პროდუქტები -->
+<section class="section">
+    <h2>პოპულარული პროდუქტები</h2>
+    <div class="products">
+        {% for i in range(5) %}
+        <div class="product-card">
+            <img src="../static/img/honey" alt="product">
+            <h4>თაფლი</h4>
+            <p>20 ₾</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<!-- საუკეთესო ფერმერები -->
+<section class="section">
+    <h2>საუკეთესო ფერმერები</h2>
+
+    <div class="farmers">
+        <div class="farmer-card">
+            <img src="../static/img/farmer 1.webp" alt="">
+            <p>ჯონი</p>
+        </div>
+
+        <div class="farmer-card">
+            <img src="../static/img/farmer 2.webp" alt="">
+            <p>ფერმა "რაისი"</p>
+        </div>
+
+        <div class="farmer-card">
+            <img src="../static/img/farmer 3.jpg" alt="">
+            <p>რაჭა</p>
+        </div>
+    </div>
+</section>
+
+<!-- ქვედა ბანერი -->
+<section class="promo-section">
+    <div class="promo-text">
+        <h3>დაზოგე დრო, თანხა და ენდე VilleGo-ს დღესვე!</h3>
+        <button class="btn-primary">შეკვეთა</button>
+    </div>
+
+    <div class="promo-products">
+        <div class="promo-card">
+            <img src="../static/img/honey 1.jpg" alt="">
+            <div>
+                <p>თაფლი</p>
+                <span>8.00 ₾</span>
+            </div>
+        </div>
+
+        <div class="promo-card">
+            <img src="../static/img/Milk products.jpg" alt="">
+            <div>
+                <p>რძე</p>
+                <span>10.00 ₾</span>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- რეგიონების რუკა -->
+<section class="section map-section">
+    <h2>რეგიონები</h2>
+
+    <div class="map-container">
+        <img src="{{ url_for('static', filename='img/georgia-map.png') }}" class="map-img" alt="Georgia map">
+
+        <!-- Pins -->
+        <span class="map-pin pin-1" title="აფხაზეთი"></span>
+        <span class="map-pin pin-2" title="სამეგრელო"></span>
+        <span class="map-pin pin-3" title="იმერეთი"></span>
+        <span class="map-pin pin-4" title="კახეთი"></span>
+        <span class="map-pin pin-5" title="შიდა ქართლი"></span>
+        <span class="map-pin pin-6" title="აჭარა"></span>
+        <span class="map-pin pin-7" title="სამცხე-ჯავახეთი"></span>
+    </div>
+</section>
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-cols">
+
+        <div>
+            <h4>კონტაქტი</h4>
+            <p>📍 თბილისი, N25</p>
+            <p>📞 555 88 88 88</p>
+            <p>✉️ VilleGoLLC@gmail.com</p>
+        </div>
+
+        <div>
+            <h4>დახმარება</h4>
+            <p>ხშირად დასმული კითხვები</p>
+            <p>მიწოდება</p>
+            <p>დაბრუნება</p>
+        </div>
+
+        <div>
+            <h4>ინფორმაცია</h4>
+            <p>ჩვენს შესახებ</p>
+            <p>კონფიდენციალურობა</p>
+            <p>წესები და პირობები</p>
+        </div>
+
+        <div>
+            <h4>გამოგვყევი</h4>
+            <div class="socials">
+                <div class="socials">
+    <a href="https://www.tbceducation.ge/" target="_blank" class="tbc-link">
+        <img src="{{ url_for('static', filename='img/tbc.png') }}" alt="TBC Bank">
+    </a>
+    <a href="https://www.tbcbank.ge" target="_blank" title="TBC Bank">
+
 </div>
+<div class="socials">
+    <a href="https://facebook.com/yourpage" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://instagram.com/yourpage" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://linkedin.com/company/yourpage" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://t.me/yourpage" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+</div>
+
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 VilleGo LLC
+    </div>
+</footer>
+
+
 {% endblock %}
